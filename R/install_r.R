@@ -1,9 +1,9 @@
 
 
 
-install_r <- function(version = "latest", minor = NULL) {
+download_r <- function(version = "latest", minor = NULL, location = NULL) {
 
-  tmp_file <- tempfile(fileext = ".tar.gz")
+  tmp_file <- location %||% tempfile(fileext = ".tar.gz")
 
   if (version == "latest") {
     message("downloading latest R version\n")
